@@ -1,4 +1,27 @@
-# My-Site<!DOCTYPE html>
+// Örnek veri (Bunu ileride bir JSON dosyasından çekebilirsin)
+const players = [
+    { name: "Arda", score: 2500 },
+    { name: "Zeynep", score: 2350 },
+    { name: "Can", score: 2100 },
+    { name: "Merve", score: 1900 }
+];
+
+// Puanlara göre büyükten küçüğe sırala
+players.sort((a, b) => b.score - a.score);
+
+const tableBody = document.getElementById('data-output');
+
+// Tabloyu doldur
+players.forEach((player, index) => {
+    let row = `
+        <tr>
+            <td>${index + 1}</td>
+            <td>${player.name}</td>
+            <td>${player.score}</td>
+        </tr>
+    `;
+    tableBody.innerHTML += row;
+});# My-Site<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
